@@ -1,0 +1,16 @@
+/* src/App.css ou outro arquivo CSS que você esteja usando */
+.carousel-item {
+  height: 400px; /* Altura padrão do carrossel */
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ajusta a imagem para cobrir o contêiner */
+}
+
+@media (max-width: 768px) {
+  .carousel-item {
+    height: 200px; /* Ajuste a altura conforme necessário para telas menores */
+  }
+}

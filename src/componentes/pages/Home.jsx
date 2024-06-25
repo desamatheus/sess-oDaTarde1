@@ -1,7 +1,6 @@
 import React from 'react';
 import './home.css';
-import 'bootstrap/dist/css/bootstrap.css';
-import Carousel from 'react-bootstrap/Carousel';
+
 import garotosperdidos from '../../images/garotosperdidos.png';
 import { Helmet } from 'react-helmet-async';
 import Toolbar from '@mui/material/Toolbar';
@@ -19,14 +18,15 @@ import Typography from '@mui/material/Typography';
 import { Button, CardActions } from '@mui/material';
 import Card from '@mui/material/Card';
 import { Link } from 'react-router-dom';
-
+import testeCarousel from '../atoms/testeCarousel';
+import ResponsiveCarousel from '../atoms/testeCarousel';
 export default function Home() {
   return (
     <div>
       <Helmet>
         <title>Classicos das tardes</title>
       </Helmet>
-      <Box sx={{ flexGrow: 1 }}>
+      <Box sx={{ flexGrow: 1, margin: 0 }}>
         <AppBar position='static'>
           <Toolbar>
             <IconButton
@@ -45,24 +45,7 @@ export default function Home() {
           </Toolbar>
         </AppBar>
       </Box>
-      <div>
-        <Carousel>
-          <Carousel.Item>
-            <img
-              className='d-block w-100'
-              src='https://media.geeksforgeeks.org/wp-content/uploads/20210425122739/2-300x115.png'
-              alt='Image One'
-            />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className='d-block w-100'
-              src='https://media.geeksforgeeks.org/wp-content/uploads/20210425122716/1-300x115.png'
-              alt='Image Two'
-            />
-          </Carousel.Item>
-        </Carousel>
-      </div>
+      <ResponsiveCarousel />
       <div className='back'>
         <h1>Clássicos da sessao da tarde</h1>
         <Box
