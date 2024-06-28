@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  align-items: flex-start; /* Alinha os itens ao início do contêiner */
+  gap: 16px; /* Espaço entre os itens */
+  background-color: brown; /* Apenas para visualização, remova se necessário */
+  padding: 16px; /* Espaçamento interno */
+}
+
+.infoFilme {
+  max-width: 600px; /* Ajuste conforme necessário */
+  flex-grow: 1;
+}
+
+h2 {
+  color: blue;
+  background-color: rgb(235, 133, 0);
+}
+.link {
+  color: aliceblue;
+}
