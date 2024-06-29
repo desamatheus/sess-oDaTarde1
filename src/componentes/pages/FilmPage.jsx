@@ -62,12 +62,9 @@ export default function FilmPage() {
         <Tabs defaultActiveKey='home' id='uncontrolled-tab-example'>
           <Tab eventKey='home' title='Detalhes'>
             <div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Obcaecati, fugit doloremque aspernatur atque unde, veritatis
-                nisi rem debitis magni voluptate nulla. Quae aspernatur placeat
-                cum architecto laudantium pariatur velit tempore.
-              </p>
+              <h3>Ficha técnica</h3>
+              <h4>Direção:</h4>
+              <p>nome-diretor</p>
             </div>
           </Tab>
           <Tab eventKey='profile' title='outro '>
