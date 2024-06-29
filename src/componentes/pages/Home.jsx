@@ -20,21 +20,42 @@ import Card from '@mui/material/Card';
 import { Link, Navigate } from 'react-router-dom';
 import testeCarousel from '../atoms/testeCarousel';
 import ResponsiveCarousel from '../atoms/testeCarousel';
+import Slider from 'react-slick';
 
 export default function Home() {
-  const options = {
-    method: 'GET',
-    headers: {
-      accept: 'application/json',
-      Authorization:
-        'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhNGRhNDcxN2EwZmQ3ZDQzZTAxMmYwNjZlNDY1MGU2YyIsIm5iZiI6MTcxOTQyMTgzNS4zNjY2MDIsInN1YiI6IjY2N2M0YWJhYzY0ZWMwMTVmYTU1N2NmNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.kZzQnRX0QAuVotwT_gXlpcOY-Rm0NRO_AZjxg1YdECc',
-    },
+  const settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
-
-  fetch('https://api.themoviedb.org/3/movie/changes?page=1', options)
-    .then((response) => response.json())
-    .then((response) => console.log(response))
-    .catch((err) => console.error(err));
   return (
     <div>
       <Helmet>
@@ -62,7 +83,50 @@ export default function Home() {
       <ResponsiveCarousel />
       <div className='back'>
         <h1>testando o select</h1>
-
+        <Slider {...settings}>
+          <div className='card'>
+            <Link to={'/filmes'}>
+              <img src={garotosperdidos} alt='' className='card-image' />
+              <div className='card-title'>movie tittle</div>
+            </Link>
+          </div>
+          <div className='card'>
+            <img src={garotosperdidos} alt='' className='card-image' />
+            <div className='card-title'>movie tittle</div>
+          </div>
+          <div className='card'>
+            <img src={garotosperdidos} alt='' className='card-image' />
+            <div className='card-title'>movie tittle</div>
+          </div>
+          <div className='card'>
+            <img src={garotosperdidos} alt='' className='card-image' />
+            <div className='card-title'>movie tittle</div>
+          </div>
+          <div className='card'>
+            <img src={garotosperdidos} alt='' className='card-image' />
+            <div className='card-title'>movie tittle</div>
+          </div>
+          <div className='card'>
+            <img src={garotosperdidos} alt='' className='card-image' />
+            <div className='card-title'>movie tittle</div>
+          </div>
+          <div className='card'>
+            <img src={garotosperdidos} alt='' className='card-image' />
+            <div className='card-title'>movie tittle</div>
+          </div>
+          <div className='card'>
+            <img src={garotosperdidos} alt='' className='card-image' />
+            <div className='card-title'>movie tittle</div>
+          </div>
+          <div className='card'>
+            <img src={garotosperdidos} alt='' className='card-image' />
+            <div className='card-title'>movie tittle</div>
+          </div>
+          <div className='card'>
+            <img src={garotosperdidos} alt='' className='card-image' />
+            <div className='card-title'>movie tittle</div>
+          </div>
+        </Slider>
         <h1>Clássicos da sessao da tarde</h1>
         <Box
           sx={{
@@ -70,8 +134,7 @@ export default function Home() {
             justifyContent: 'space-between',
             flexWrap: 'nowrap',
           }}>
-          {' '}
-          <Link to={`/filmes`}>
+          <Link to={'/filmes'}>
             <Card sx={{ maxWidth: 400, margin: 1 }}>
               <CardActionArea>
                 <CardMedia
